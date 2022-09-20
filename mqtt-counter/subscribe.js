@@ -10,8 +10,8 @@ const port = 4123;
 var settings = {
     port: 1883
 }
-var topic = "/oneM2M/resp/antares-cse/e7e349fc2216941a:9d0cf82c25277bdd/json"
-// var topic = "/oneM2M/resp/antares-cse/d20dbc9cea58054b:df24fbe0dc2d9332/json"
+var topic = "/oneM2M/resp/antares-cse/{{ACCESS-KEY-HERE}}/json"
+
 var messageCounter = 0;
 
 client.on('connect', function () {
@@ -60,7 +60,7 @@ app.post('/downlink/:status', (req, res) => {
     }
     let url = 'https://platform.antares.id:8443/~/antares-cse/antares-id/WorkshopAntares/SmartSwitchStatus';
     let headers = {
-      'X-M2M-Origin': 'e7e349fc2216941a:9d0cf82c25277bdd',
+      'X-M2M-Origin': '{{ACCESS-KEY-HERE}}',
       'Content-Type': 'application/json;ty=4',
       'Accept': 'application/json'
     };
